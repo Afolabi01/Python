@@ -2,8 +2,10 @@
 #First import the module
 import requests
 
+ask = input("what artist are you looking for today: ")
+
 #create a request and save it in the response variable or any name you want to call it
-response = requests.get("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Harry Styles&api_key=&format=json")
+response = requests.get("http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist="+ask+"&api_key=&format=json")
 
 #Then derive your results in json form
 results = response.json()
